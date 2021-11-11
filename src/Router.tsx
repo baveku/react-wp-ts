@@ -9,7 +9,7 @@ const history = createBrowserHistory()
 export function RouterProvider() {
 	return (
 		<Router history={history} >
-			<Redirect to="/users" />
+			<Redirect to="/" />
 			<Switch>
 				<Route exact path="/">
 					<HomePage />
