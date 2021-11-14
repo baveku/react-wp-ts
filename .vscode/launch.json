@@ -5,27 +5,29 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"type": "node",
-			"name": "vscode-jest-tests",
+			"type": "pwa-node",
 			"request": "launch",
+			"name": "Launch Program",
+			"runtimeExecutable": "yarn",
 			"args": [
-				"test",
-			],
-			"cwd": "${workspaceFolder}",
+				"start"
+			]
+		},
+		{
+			"type": "node",
+			"name": "jest-tests",
+			"request": "launch",
 			"console": "integratedTerminal",
 			"internalConsoleOptions": "neverOpen",
 			"disableOptimisticBPs": true,
 			"runtimeExecutable": "yarn",
-			"protocol": "inspector"
-		},
-		{
-			"type": "node",
-			"request": "launch",
-			"name": "Launch via Yarn",
-			"runtimeExecutable": "yarn",
+			"protocol": "inspector",
 			"cwd": "${workspaceFolder}",
-			"runtimeArgs": [
-				"start"
+			"args": [
+				"test",
+				"test",
+				"--runInBand",
+				"--watchAll=false"
 			]
 		}
 	]
